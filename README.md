@@ -134,7 +134,11 @@ CropYieldPrediction/
 ✔ Improves productivity
 ✔ Supports sustainable agriculture
 
+<img width="1899" height="924" alt="Screenshot 2026-01-29 121632" src="https://github.com/user-attachments/assets/41d80c9d-596f-4b94-856b-c9f2e4d04787" />
+
 ---
+
+
 
 ## 👨‍💻 Author
 
