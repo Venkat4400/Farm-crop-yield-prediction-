@@ -1,0 +1,19 @@
+project_id = "chxkglbcyuekgigmdlfj"
+
+[functions.predict-yield]
+verify_jwt = false
+
+[functions.get-weather]
+verify_jwt = false
+
+[functions.get-recommendations]
+verify_jwt = false
+
+[functions.get-model-stats]
+verify_jwt = false
+
+[functions.import-crop-data]
+verify_jwt = false
+
+[functions.analyze-soil]
+verify_jwt = false

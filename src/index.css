@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 60 30% 98%;
+    --foreground: 140 25% 15%;
+
+    --card: 60 40% 99%;
+    --card-foreground: 140 25% 15%;
+
+    --popover: 60 40% 99%;
+    --popover-foreground: 140 25% 15%;
+
+    --primary: 142 45% 42%;
+    --primary-foreground: 60 30% 98%;
+
+    --secondary: 48 85% 85%;
+    --secondary-foreground: 40 60% 25%;
+
+    --muted: 60 20% 94%;
+    --muted-foreground: 140 10% 45%;
+
+    --accent: 32 90% 65%;
+    --accent-foreground: 32 80% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 30% 98%;
+
+    --border: 60 20% 88%;
+    --input: 60 20% 88%;
+    --ring: 142 45% 42%;
+
+    --radius: 0.75rem;
+
+    --chart-green: 142 45% 42%;
+    --chart-yellow: 48 85% 65%;
+    --chart-orange: 32 90% 55%;
+    --chart-light-green: 142 40% 75%;
+    --chart-light-yellow: 48 85% 85%;
+
+    --sidebar-background: 60 30% 97%;
+    --sidebar-foreground: 140 25% 15%;
+    --sidebar-primary: 142 45% 42%;
+    --sidebar-primary-foreground: 60 30% 98%;
+    --sidebar-accent: 48 60% 90%;
+    --sidebar-accent-foreground: 140 25% 15%;
+    --sidebar-border: 60 20% 88%;
+    --sidebar-ring: 142 45% 42%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(142 45% 42%) 0%, hsl(142 50% 55%) 50%, hsl(48 85% 70%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(60 40% 99%) 0%, hsl(60 30% 96%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(48 85% 75%) 0%, hsl(32 90% 65%) 100%);
+  }
+
+  .dark {
+    --background: 140 20% 8%;
+    --foreground: 60 30% 95%;
+
+    --card: 140 20% 10%;
+    --card-foreground: 60 30% 95%;
+
+    --popover: 140 20% 10%;
+    --popover-foreground: 60 30% 95%;
+
+    --primary: 142 50% 50%;
+    --primary-foreground: 140 20% 8%;
+
+    --secondary: 48 40% 20%;
+    --secondary-foreground: 48 85% 85%;
+
+    --muted: 140 15% 18%;
+    --muted-foreground: 60 15% 65%;
+
+    --accent: 32 70% 45%;
+    --accent-foreground: 60 30% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 30% 95%;
+
+    --border: 140 15% 18%;
+    --input: 140 15% 18%;
+    --ring: 142 50% 50%;
+
+    --sidebar-background: 140 20% 6%;
+    --sidebar-foreground: 60 30% 95%;
+    --sidebar-primary: 142 50% 50%;
+    --sidebar-primary-foreground: 140 20% 8%;
+    --sidebar-accent: 140 15% 15%;
+    --sidebar-accent-foreground: 60 30% 95%;
+    --sidebar-border: 140 15% 18%;
+    --sidebar-ring: 142 50% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-lg;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .stat-card {
+    @apply bg-card rounded-xl p-6 border border-border shadow-sm hover-lift;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
