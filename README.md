@@ -140,6 +140,6 @@ CropYieldPrediction/
 
 **Venkat Kota**
 AI & Web Developer
-GitHub: [https://github.com/Venkat4400](https://github.com/Venkat4400)
+GitHub: [https://github.com/Venkat4400]:farmercropprediction.vercel.app
 
 
